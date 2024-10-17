@@ -1,23 +1,25 @@
 How I made an SVG for every monomer library entry.
 
-mkdir RCSB_SDF 0 1 2 3 4 5 6 7 8 9 A B C ... etc. This should probably be done 
+Requires Python3.12 (for `itertools.batched`), RDKit (Python version) and OpenBabel (command line version).
 
-for i in ~/Moorhen/checkout/monomers/*/*.cif; do grep " SMILES " $i| head -1| awk '{print $1" "$NF}'; done > smiles.db
+`mkdir RCSB_SDF 0 1 2 3 4 5 6 7 8 9 A B C ... etc.` This should probably be done in `test_mol2svg.py`
 
-Fixed quite a few problems in smiles.db by hand, in many cases the first SMILES entry is not valid.
+`for i in ~/Moorhen/checkout/monomers/*/*.cif; do grep " SMILES " $i| head -1| awk '{print $1" "$NF}'; done > smiles.db`
 
-for i in ~/Moorhen/checkout/monomers/*/*.cif; do if [ `grep -c " SMILES " $i` -eq 0 ]; then echo $i; fi; done > nosmiles.txt
+Fixed quite a few problems in smiles.db by hand, in many cases the first SMILES entry is not valid - I need to check the cif SMILES strings more intelligently.
 
-python3 ./get_rcsb_sdf.py
+``for i in ~/Moorhen/checkout/monomers/*/*.cif; do if [ `grep -c " SMILES " $i` -eq 0 ]; then echo $i; fi; done > nosmiles.txt``
 
-cd RCSB_SDF
+`python3 ./get_rcsb_sdf.py`
 
-for i in *.sdf; do ~/openbabel_inst/bin/obabel $i -o smi -O ${i%.sdf}.smi; done
+`cd RCSB_SDF`
 
-for i in *.smi ; do awk '{print $2" "$1}' $i; done >> ../smiles.db
+`for i in *.sdf; do ~/openbabel_inst/bin/obabel $i -o smi -O ${i%.sdf}.smi; done`
 
-cd ..
+`for i in *.smi ; do awk '{print $2" "$1}' $i; done >> ../smiles.db`
 
-ccp4-python test_mol2svg.py
+`cd ..`
 
-python3 build_html.py
+`python3 test_mol2svg.py`
+
+`python3 build_html.py`
