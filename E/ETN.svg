@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<svg version='1.1' baseProfile='full'
+              xmlns='http://www.w3.org/2000/svg'
+                      xmlns:rdkit='http://www.rdkit.org/xml'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                  xml:space='preserve'
+width='300px' height='300px' viewBox='0 0 300 300'>
+<!-- END OF HEADER -->
+<rect style='opacity:1.0;fill:#FFFFFF;stroke:none' width='300.0' height='300.0' x='0.0' y='0.0'> </rect>
+<path class='bond-0 atom-0 atom-1' d='M 177.1,147.8 L 142.9,122.0' style='fill:none;fill-rule:evenodd;stroke:#0000FF;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-0 atom-0 atom-1' d='M 142.9,122.0 L 108.7,96.3' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-1 atom-1 atom-2' d='M 108.7,96.3 L 13.6,136.7' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-0 atom-3' d='M 205.4,152.4 L 245.9,135.2' style='fill:none;fill-rule:evenodd;stroke:#0000FF;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path class='bond-2 atom-0 atom-3' d='M 245.9,135.2 L 286.4,117.9' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
+<path d='M 110.4,97.6 L 108.7,96.3 L 104.0,98.3' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;' />
+<path class='atom-0' d='M 185.0 144.2
+L 194.3 159.2
+Q 195.2 160.7, 196.7 163.4
+Q 198.2 166.1, 198.3 166.2
+L 198.3 144.2
+L 202.0 144.2
+L 202.0 172.6
+L 198.1 172.6
+L 188.2 156.2
+Q 187.0 154.2, 185.8 152.0
+Q 184.6 149.8, 184.2 149.2
+L 184.2 172.6
+L 180.5 172.6
+L 180.5 144.2
+L 185.0 144.2
+' fill='#0000FF'/>
+<path class='atom-0' d='M 180.2 175.4
+L 184.0 175.4
+L 184.0 187.4
+L 198.5 187.4
+L 198.5 175.4
+L 202.4 175.4
+L 202.4 203.7
+L 198.5 203.7
+L 198.5 190.6
+L 184.0 190.6
+L 184.0 203.7
+L 180.2 203.7
+L 180.2 175.4
+' fill='#0000FF'/>
+</svg>
