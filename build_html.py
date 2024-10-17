@@ -35,7 +35,7 @@ for d in dirs:
         for s in b:
             t += '<figure>\n'
             t += '<img src="'+s+'" alt="'+s+'" />\n'
-            t += '<figcaption>'+s+'</figcaption>\n'
+            t += '<figcaption>'+s.rstrip(".svg")+'</figcaption>\n'
             t += '</figure>\n'
 
         t += tTail
