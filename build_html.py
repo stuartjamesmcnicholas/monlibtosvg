@@ -11,6 +11,7 @@ tHeader = """<!DOCTYPE html>
   <head>
     <meta charset="utf-8">
     <title>SVG</title>
+    <link rel="stylesheet" href="../style.css">
   </head>
   <body>
 """
@@ -27,7 +28,10 @@ for d in dirs:
 
     svgs = glob.glob("*.svg")
     for s in svgs:
+        t += '<figure>'
         t += '<img src="'+s+'" alt="'+s+'" />\n'
+        t += '<figcaption>'+s+'</figcaption>'
+        t += '</figure>'
 
     t += tTail
 
