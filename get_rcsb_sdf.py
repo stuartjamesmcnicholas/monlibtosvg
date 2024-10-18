@@ -2,7 +2,12 @@ import sys, os
 import urllib.request
 
 ls = []
-with open("nosmiles.txt") as f:
+
+fn = "nosmiles.txt"
+if len(sys.argv)> 1:
+    fn = sys.argv[1]
+
+with open(fn) as f:
     ls = f.readlines()
 
 for l in ls:
