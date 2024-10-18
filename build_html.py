@@ -21,38 +21,43 @@ tTail = """  </body>
 </html>
 """
 
+def build_html(root=None):
 
-for d in dirs:
-    os.chdir(d)
+    for d in dirs:
+        if not os.path.isdir(os.path.join(root,d)):
+            continue
+        os.chdir(os.path.join(root,d))
 
-    svgs = sorted(glob.glob("*.svg"))
-    batches = itertools.batched(svgs,100)
-    ibatch = 1
-    tMain = tHeader
-    tMain += '<ul>\n'
-    for b in batches:
-        t = tHeader
-        for s in b:
-            t += '<figure>\n'
-            t += '<img src="'+s+'" alt="'+s+'" />\n'
-            t += '<figcaption>'+s.rstrip(".svg")+'</figcaption>\n'
-            t += '</figure>\n'
+        svgs = sorted(glob.glob("*.svg"))
+        batches = itertools.batched(svgs,100)
+        ibatch = 1
+        tMain = tHeader
+        tMain += '<ul>\n'
+        for b in batches:
+            t = tHeader
+            for s in b:
+                t += '<figure>\n'
+                t += '<img src="'+s+'" alt="'+s+'" />\n'
+                t += '<figcaption>'+s.rstrip(".svg")+'</figcaption>\n'
+                t += '</figure>\n'
 
-        t += tTail
+            t += tTail
 
-        with open("index-"+str(ibatch)+".html","w+") as f:
-            f.write(t)
+            with open("index-"+str(ibatch)+".html","w+") as f:
+                f.write(t)
 
-        indexLabel = b[0].rstrip(".svg")+'-'+b[-1].rstrip(".svg")
+            indexLabel = b[0].rstrip(".svg")+'-'+b[-1].rstrip(".svg")
 
-        tMain += '<li><a href="'+'index-'+str(ibatch)+'.html">'+indexLabel+'</a></li>'+'\n'
+            tMain += '<li><a href="'+'index-'+str(ibatch)+'.html">'+indexLabel+'</a></li>'+'\n'
 
-        ibatch += 1
+            ibatch += 1
 
-    tMain += '</ul>\n'
-    tMain += tTail
-    with open("index.html","w+") as f:
-        f.write(tMain)
+        tMain += '</ul>\n'
+        tMain += tTail
+        with open(os.path.join(root,d,"index.html"),"w+") as f:
+            f.write(tMain)
 
-    os.chdir("..")
+        os.chdir(root)
 
+build_html(os.path.dirname(__file__))
+build_html(os.path.join(os.path.dirname(__file__),"FROM_SDF"))
